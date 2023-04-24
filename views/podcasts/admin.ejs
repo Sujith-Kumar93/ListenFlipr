@@ -1,0 +1,81 @@
+<% layout('layouts/boilerplate') %>
+
+<form action="/home" method="POST" enctype="multipart/form-data" novalidate>
+  <div class="mb-3">
+    <label class="form-label" for="name">Name</label>
+    <input
+      class="form-control"
+      type="text"
+      id="name"
+      name="podcast[name]"
+      required
+    />
+    <div class="valid-feedback">Looks good!</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="description">Description</label>
+    <input
+      class="form-control"
+      type="text"
+      id="description"
+      name="podcast[description]"
+      required
+    />
+    <div class="valid-feedback">Looks good!</div>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text form-label" for="inputGroupSelect01"
+        >Category</label
+      >
+    </div>
+    <select
+      class="custom-select form-control"
+      name="podcast[category]"
+      id="category"
+      required
+    >
+      <option value="Knowledge">Knowledge</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Health and wellness">Health and wellness</option>
+      <option value="Crime and Thriller">Crime and Thriller</option>
+    </select>
+    <div class="valid-feedback">Looks good!</div>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text form-label" for="inputGroupSelect01"
+        >Type</label
+      >
+    </div>
+    <select
+      class="custom-select form-control"
+      name="podcast[type]"
+      id="type"
+      required
+    >
+      <option value="audio">Audio</option>
+      <option value="video">Video</option>
+    </select>
+    <div class="valid-feedback">Looks good!</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="speaker">Speaker</label>
+    <input
+      class="form-control"
+      type="text"
+      id="speaker"
+      name="podcast[speaker]"
+      required
+    />
+    <div class="valid-feedback">Looks good!</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="video">Upload podcast video</label>
+    <input type="file" name="video" id="'video" />
+  </div>
+  <div class="mb-3">
+    <button class="btn btn-success">Add</button>
+  </div>
+</form>
+<a href="/home">All podcasts</a>

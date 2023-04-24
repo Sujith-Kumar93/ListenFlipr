@@ -1,0 +1,17 @@
+<% layout('layouts/boilerplate') %>
+<h1>hii</h1>
+<ul>
+  <% for(let pod of podcasts){ %> <% if(pod.category=="video"){%>
+  <li>
+    <a href="/home/<%= pod._id%>"><%= pod.name %></a>
+  </li>
+  <% } %> <%} %>
+</ul>
+<br />
+<ul>
+  <% for(let pod of podcasts){ %> <% if(pod.category=="audio"){%>
+  <li>
+    <a href="/home/<%= pod._id%>"><%= pod.name %></a>
+  </li>
+  <% } %> <%} %>
+</ul>

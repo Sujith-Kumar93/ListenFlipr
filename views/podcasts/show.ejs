@@ -1,0 +1,58 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="d-flex row">
+  <div class="col-6 offset-3">
+    <div class="card h-100">
+      <iframe
+        src="<%=pod.video.url%>"
+        width="640"
+        height="360"
+        style="height: auto; width: 100%; aspect-ratio: 640 / 360"
+        allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+        allowfullscreen
+        frameborder="0"
+      ></iframe>
+      <div class="card-body">
+        <h5 class="card-title"><%= pod.name %></h5>
+        <p class><%= pod.description %></p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">By <%= pod.speaker %></small>
+        <form
+          id="form"
+          method="POST"
+          action="/home/<%= pod._id %>/favourite/<%= currentUser._id %>"
+        >
+          <div class="form-check form-check-reverse card-body">
+            <input
+              type="checkbox"
+              name="num"
+              onchange="$('#form').submit();"
+              id="reverseCheck1"
+              class="form-check-input"
+            />
+            <label class="form-check-label d-inline" for="reverseCheck1">
+              Mark as favourite
+            </label>
+          </div>
+        </form>
+        <div class="card-body">
+          <a class="card-link btn btn-info" href="/home/<%=pod._id%>/edit"
+            >Edit</a
+          >
+          <form
+            class="d-inline"
+            action="/home/<%= pod._id %>?_method=DELETE"
+            method="POST"
+          >
+            <button class="btn btn-success align-items-center">Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <a href="/home">All Podcasts</a>
+  </div>
+</div>

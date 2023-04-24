@@ -1,0 +1,89 @@
+<% layout('layouts/boilerplate') %>
+
+<h1>Edit Podcast</h1>
+<form
+  action="/home/<%= podcast._id %>?_method=PUT"
+  method="POST"
+  novalidate
+  class="validated-form"
+  enctype="multipart/form-data"
+>
+  <div class="mb-3">
+    <label class="form-label" for="name">Name</label>
+    <input
+      class="form-control"
+      type="text"
+      id="name"
+      name="podcast[name]"
+      value="<%= podcast.name %>"
+      required
+    />
+    <div class="valid-feedback">Looks good!</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="description">Description</label>
+    <input
+      class="form-control"
+      type="text"
+      id="description"
+      name="podcast[description]"
+      required
+      value="<%= podcast.description %>"
+    />
+    <div class="valid-feedback">Looks good!</div>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text form-label" for="inputGroupSelect01"
+        >Category</label
+      >
+    </div>
+    <select
+      class="custom-select form-control"
+      name="podcast[category]"
+      id="category"
+      required
+      value="<%= podcast.category %>"
+    >
+      <option selected value="Knowledge">Knowledge</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Health and wellness">Health and wellness</option>
+      <option value="Crime and Thriller">Crime and Thriller</option>
+    </select>
+    <div class="valid-feedback">Looks good!</div>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text form-label" for="inputGroupSelect01"
+        >Type</label
+      >
+    </div>
+    <select
+      class="custom-select form-control"
+      name="podcast[type]"
+      id="type"
+      required
+      value="<%= podcast.type %>"
+    >
+      <option selected value="audio">Audio</option>
+      <option value="video">Video</option>
+    </select>
+    <div class="valid-feedback">Looks good!</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="speaker">Speaker</label>
+    <input
+      class="form-control"
+      type="text"
+      id="speaker"
+      name="podcast[speaker]"
+      value="<%= podcast.speaker%>"
+      required
+    />
+    <div class="valid-feedback">Looks good!</div>
+  </div>
+  <div class="mb-3">
+    <button class="btn btn-success">Update podcast</button>
+  </div>
+</form>
+<a href="/home/<%= podcast._id %>">Back to Podcast</a>

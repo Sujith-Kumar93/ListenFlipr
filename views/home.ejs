@@ -1,0 +1,110 @@
+<% layout('layouts/boilerplate') %> <% let i=0 %>
+<h3>Knowledge</h3>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% for(let pod of podcasts){ %> <% if(pod.category=="Knowledge"){%> <%
+  if(i%3==0){%>
+  <div class="col">
+    <% } %>
+    <div class="card h-100">
+      <div class="card-body">
+        <a href="/home/<%=pod._id%>">
+          <h5 class="card-title"><%= pod.name %></h5>
+        </a>
+      </div>
+      <div class="card-body">
+        <small><%=pod.description%></small>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">By <%= pod.speaker %></small>
+      </div>
+    </div>
+
+    <% if(i%3==0) {%>
+  </div>
+  <% } %> <% i=i+1 %> <% } %> <%} %>
+</div>
+
+<hr />
+<h3>Health and wellness</h3>
+
+<% i=0 %>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% for(let pod of podcasts){ %> <% if(pod.category=="Health and wellness"){%>
+  <% if(i%3==0){%>
+  <div class="col">
+    <% } %>
+    <div class="card h-100">
+      <div class="card-body">
+        <a href="/home/<%=pod._id%>">
+          <h5 class="card-title"><%= pod.name %></h5>
+        </a>
+      </div>
+      <div class="card-body">
+        <small><%=pod.description%></small>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><%= pod.speaker %></small>
+      </div>
+    </div>
+    <% if(i%3==0) {%>
+  </div>
+  <% } %> <% i=i+1 %> <% } %> <%} %>
+</div>
+
+<hr />
+<h3>Crime and Thriller</h3>
+
+<% i=0 %>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% for(let pod of podcasts){ %> <% if(pod.category=="Crime and Thriller"){%>
+  <% if(i%3==0){%>
+  <div class="col">
+    <% } %>
+    <div class="card h-100">
+      <div class="card-body">
+        <a href="/home/<%=pod._id%>">
+          <h5 class="card-title"><%= pod.name %></h5>
+        </a>
+      </div>
+      <div class="card-body">
+        <small><%=pod.description%></small>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><%= pod.speaker %></small>
+      </div>
+    </div>
+    <% if(i%3==0) {%>
+  </div>
+  <% } %> <% i=i+1 %> <% } %> <%} %>
+</div>
+
+<hr />
+<h3>Comedy</h3>
+
+<% i=0 %>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% for(let pod of podcasts){ %> <% if(pod.category=="Comedy"){%> <%
+  if(i%3==0){%>
+  <div class="col">
+    <% } %>
+    <div class="card h-100">
+      <div class="card-body">
+        <a href="/home/<%=pod._id%>">
+          <h5 class="card-title"><%= pod.name %></h5>
+        </a>
+      </div>
+      <div class="card-body">
+        <small><%=pod.description%></small>
+      </div>
+
+      <div class="card-footer">
+        <small class="text-muted"><%= pod.speaker %></small>
+      </div>
+    </div>
+    <% if(i%3==0) {%>
+  </div>
+  <% } %> <% i=i+1 %> <% } %> <%} %>
+</div>

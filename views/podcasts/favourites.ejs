@@ -1,0 +1,31 @@
+<% layout('layouts/boilerplate') %>
+<h1><em>Your Favourites</em></h1>
+<% let i=0 %>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% for(let pod of Userfavourites){ %> <% if(i%3==0){%>
+  <div class="col">
+    <% } %>
+    <div class="card h-100">
+      <a href="/home/<%=pod._id%>">
+        <img
+          src="https://res.cloudinary.com/duqzhu4b9/image/upload/v1681143921/YelpCamp/mmhd48iect6f26rdbuou.jpg"
+          class="card-img-top"
+          alt="Skyscrapers"
+        />
+      </a>
+      <div class="card-body">
+        <h5 class="card-title"><%= pod.name %></h5>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">By <%= pod.speaker %></small>
+        <form action="/favourite/<%=pod._id%>?_method=DELETE" method="POST">
+          <button class="btn btn-danger ml-auto my-2">Remove Favourite</button>
+        </form>
+      </div>
+    </div>
+
+    <% if(i%3==0) {%>
+  </div>
+  <% } %> <% i=i+1 %> <% } %>
+</div>

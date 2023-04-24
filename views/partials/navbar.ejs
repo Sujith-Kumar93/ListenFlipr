@@ -1,0 +1,54 @@
+<nav
+  class="navbar sticky-top navbar-expand-lg navbar-light"
+  style="background-color: #e3f2fd"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Listen</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/home">All Podcasts</a>
+        <a class="nav-link" href="/admin">Admin</a>
+
+        <a class="nav-link" href="/favourite">Favourites</a>
+      </div>
+    </div>
+    <div class="navbar-nav ml-auto">
+      <form
+        class="form-inline my-2 my-lg-0"
+        action="/home/search"
+        method="POST"
+      >
+        <span class="d-flex mx-2"
+          ><input
+            class="form-control mr-sm-2"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+            name="name"
+          />
+          <button class="btn btn-outline-success mx-2 my-sm-0" type="submit">
+            Search
+          </button></span
+        >
+      </form>
+      <% if(!currentUser) {%>
+      <a class="nav-link" href="/login">Login</a>
+      <a class="nav-link" href="/register">Register</a>
+      <% } else{%>
+      <a class="nav-link" href="/logout">Logout</a>
+      <% } %>
+    </div>
+  </div>
+</nav>
